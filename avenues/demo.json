@@ -1,0 +1,430 @@
+{
+    "title": "Avenue",
+    "content": "Transform JSON files into static websites.",
+    "buttons": [
+        "back",
+        "home"
+    ],
+    "steps": [
+        {
+            "title": "What is Avenue?",
+            "content": [
+                "First and foremost, Avenue is a proof of concept.",
+                "Although it can be used for much more, Avenue was created to make it easy to write walkthrough-based documentation."
+            ],
+            "steps": [
+                {
+                    "title": "What do you mean?",
+                    "content": [
+                        "Well, perhaps you would like to describe something that contains a lot of ifs and buts.",
+                        "You might want to describe only what is relevant to the reader."
+                    ],
+                    "steps": [
+                        {
+                            "title": "I don't understand",
+                            "content": "Okay, you see how you're getting information about this project right now?",
+                            "steps": [
+                                {
+                                    "reference": "well-that",
+                                    "button": "Yes",
+                                    "title": "Well... that!",
+                                    "steps": [
+                                        {
+                                            "button": "Ah, right! Okay what else?",
+                                            "goto": "okay-what-else"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "button": "No",
+                                    "title": "What?",
+                                    "content": [
+                                        "What do you mean \"No\"?",
+                                        "You see how you're getting relevant information based on your answers?"
+                                    ],
+                                    "steps": [
+                                        {
+                                            "button": "Yes",
+                                            "goto": "well-that"
+                                        },
+                                        {
+                                            "button": "Also yes!",
+                                            "goto": "well-that"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "button": "Okay, what else?",
+                            "goto": "okay-what-else"
+                        }
+                    ]
+                },
+                {
+                    "reference": "okay-what-else",
+                    "title": "Okay, what else?",
+                    "content": "The content is written in a JSON file, so is easily modified and can be stored in a repository.",
+                    "steps": [
+                        {
+                            "title": "All content in one JSON file?",
+                            "content": "It doesn't have to be. Avenues can link to other avenues, so if it's easier to spread the content out, do that!",
+                            "steps": [
+                                {
+                                    "button": "Got ya!",
+                                    "goto": "home"
+                                }
+                            ]
+                        },
+                        {
+                            "button": "Got ya!",
+                            "goto": "home"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "reference": "documentation",
+            "button": "Documentation",
+            "title": "Avenue Documentation",
+            "steps": [
+                {
+                    "title": "Getting started",
+                    "content": [
+                        "Create a JSON file and put it in the `avenues/` directory:",
+                        {
+                            "type": "code",
+                            "content": "avenues/example.json"
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "button": "Next",
+                            "title": "Add a title and content",
+                            "content": [
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "title": "This is my first step in Avenue!",
+                                        "content": "Here's a brief description!"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": [
+                                        {
+                                            "type": "h2",
+                                            "content": "This is my first step in Avenue!"
+                                        },
+                                        "Here's a brief description!"
+                                    ]
+                                }
+                            ],
+                            "steps": [
+                                {
+                                    "button": "Next",
+                                    "title": "Add some steps",
+                                    "content": [
+                                        {
+                                            "type": "code",
+                                            "content": {
+                                                "title": "This is my first step in Avenue!",
+                                                "content": "Here's a brief description!",
+                                                "steps": [
+                                                    {
+                                                        "button": "Step A"
+                                                    },
+                                                    {
+                                                        "button": "Step B"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "box",
+                                            "content": [
+                                                {
+                                                    "type": "h2",
+                                                    "content": "This is my first step in Avenue!"
+                                                },
+                                                "Here's a brief description!",
+                                                {
+                                                    "type": "button",
+                                                    "target": "#",
+                                                    "text": "Step A"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "target": "#",
+                                                    "text": "Step B"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "steps": [
+                                        {
+                                            "button": "Next",
+                                            "title": "And for each step...",
+                                            "content": [
+                                                "...you can add a title, content and steps.",
+                                                {
+                                                    "type": "code",
+                                                    "content": {
+                                                        "title": "This is my first step in Avenue!",
+                                                        "content": "Here's a brief description!",
+                                                        "steps": [
+                                                            {
+                                                                "button": "Step A",
+                                                                "title": "This is Step A",
+                                                                "content": "Welcome to Step A"
+                                                            },
+                                                            {
+                                                                "button": "Step B",
+                                                                "title": "This is Step B",
+                                                                "content": "Welcome to Step B"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "...and those steps can have steps!",
+                                                "...and <em>those</em> steps can have steps!"
+                                            ],
+                                            "steps": [
+                                                {
+                                                    "button": "Back to Documentation",
+                                                    "goto": "documentation"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Content types",
+                    "steps": [
+                        {
+                            "button": "Text",
+                            "title": "Adding text",
+                            "content": [
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "content": "I am a string of text"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": "I am a string of text"
+                                }
+                            ]
+                        },
+                        {
+                            "button": "Arrays",
+                            "title": "Adding arrays of content",
+                            "content": [
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "content": [
+                                            "I am a string of text",
+                                            "I am another string of text"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": [
+                                        "I am a string of text",
+                                        "I am another string of text"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "button": "HTML",
+                            "title": "Adding HTML content",
+                            "content": [
+                                "There are two ways of adding HTML content.",
+                                "The first is easy. Just type some HTML.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "content": "I am very <strong>strong</strong>"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": "I am very <strong>strong</strong>"
+                                },
+                                "The second way is to specify the HTML element as a type.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "content": {
+                                            "type": "h2",
+                                            "content": "I am a header"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": {
+                                        "type": "h2",
+                                        "content": "I am a header"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "button": "Code",
+                            "title": "Adding code to a step",
+                            "content": [
+                                "There are two ways of adding code to a step.",
+                                "The first is by using ticks.",
+                                {
+                                    "type": "code",
+                                    "content": "Here is some `code`."
+                                },
+                                {
+                                    "type": "box",
+                                    "content": "Here is some `code`."
+                                },
+                                "The second way is to specify the code type.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "type": "code",
+                                        "content": "<em>Some code</em>"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": {
+                                        "type": "code",
+                                        "content": "<em>Some code</em>"
+                                    }
+                                },
+                                "Also, if your code happens to be JSON, you don't need to put the content in quotes. You're already writing JSON!"
+                            ]
+                        },
+                        {
+                            "button": "Buttons",
+                            "title": "Adding buttons to a step",
+                            "content": [
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "type": "button",
+                                        "text": "Example",
+                                        "target": "http://www.example.com"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": {
+                                        "type": "button",
+                                        "text": "Example",
+                                        "target": "http://www.example.com"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "button": "Boxes",
+                            "title": "Adding boxes to a step",
+                            "content": [
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "type": "box",
+                                        "content": "This content is inside of a box"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "content": {
+                                        "type": "box",
+                                        "content": "This content is inside of a box"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Advanced navigation",
+                    "steps": [
+                        {
+                            "title": "Linking to other avenues",
+                            "content": [
+                                "Perhaps for the sake of readability, or easier version control, you'd like to split your steps into multiple avenue files.",
+                                "You can do this by adding an `avenue` to your button.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "steps": [
+                                            {
+                                                "button": "Go to another avenue",
+                                                "avenue": "another-avenue"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "Upon clicking the button, it will look for the JSON file at `avenues/another-avenue.json`."
+                            ]
+                        },
+                        {
+                            "title": "Linking to other steps",
+                            "content": [
+                                "To have a step link to a step that is not it's direct child, use a reference.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "reference": "step-a",
+                                        "title": "Step A"
+                                    }
+                                },
+                                "Then on your button, use `goto` to have it navigate to that referenced step.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "steps": [
+                                            {
+                                                "button": "Go to another step",
+                                                "goto": "step-a"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "You can use `\"goto\": \"home\"` to go back to the top-most step. You don't need to create the `home` reference."
+                            ]
+                        },
+                        {
+                            "title": "Global navigation",
+                            "content": [
+                                "You can add a back button, or a home button by adding it to your JSON file as follows.",
+                                {
+                                    "type": "code",
+                                    "content": {
+                                        "buttons": [
+                                            "back",
+                                            "home"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "button": "Github",
+            "url": "https://github.com/carlnewton/avenue"
+        }
+    ]
+}
